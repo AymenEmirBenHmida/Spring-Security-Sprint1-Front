@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Book :</h2>
+    </div>
+    <form >
+        
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Book</label>
+        <input type="text"[(ngModel)]= "newBook.nomBook"
+        name="nomBook" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prix Book</label>
+        <input type="number" [(ngModel)]= "newBook.prixBook"
+        name="prixBook" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+        <input type="date" [(ngModel)]= "newBook.datePublication"
+        name="datePublication" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label >Description Book</label>
+            <input type="text" [(ngModel)]="newBook.descriptionBook"
+            name="descriptionBook" class="form-control">
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+
+                <label >Author</label>
+                <select  [(ngModel)]="newBook.author" name="author" class="form-control"  >
+        
+                    <option *ngFor="let author of authors"  [ngValue]="author">{{author.nomAuthor}}</option>
+        
+                </select>
+                </div>
+        
+            
+        <div class="mt-2">
+        <button type="submit" (click)="addBook()" class="btn btn-success">Ajouter</button>
+        </div>
+        </form>
+        </div>

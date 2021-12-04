@@ -1,0 +1,24 @@
+
+<div class="container">
+    <div>
+    <h2>Ajouter un Author :</h2>
+    </div>
+    <form >
+        
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Author</label>
+        <input type="text"[(ngModel)]= "newAuthor.nomAuthor"
+        name="nomAuthor" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        
+        <label >Date création</label>
+        <input type="date" [(ngModel)]= "newAuthor.dateNaissance"
+        name="dateNaissance" class="form-control">
+        </div>
+        
+        <div class="mt-2">
+        <button type="submit" (click)="addAuthor()" class="btn btn-success">Ajouter</button>
+        </div>
+        </form>
+        </div>

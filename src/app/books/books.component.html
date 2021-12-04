@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card shadow mb-12">
+    <div class="card-body">
+        <form>
+            <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+            <label > Find By Author</label>
+            <select  [(ngModel)]="author1" name="author1" class="form-control"  >
+                <option *ngFor="let author of author2"  [ngValue]="author">all</option>
+                <option *ngFor="let author of authors"  [ngValue]="author">{{author.nomAuthor}}</option>
+    
+            </select>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <br>
+            <button type="submit" (click)=consulterCertainProdui(author1.idAuthor) class="btn btn-success">recherche</button>
+            </div>
+        </div>
+        </form>
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date Création</th> <th>Description</th></tr>
+    <tbody *ngFor="let book of books">
+    <tr >
+    <td>{{book.idBook}}</td>
+    <td>{{book.nomBook}}</td>
+    <td>{{book.prixBook}}</td>
+    <td>{{book.datePublication | date:'dd/MM/yyyy'}}</td>
+    <td>{{book.descriptionBook}}</td>
+    <td><a class="btn btn-danger" (click)="supprimerProduit(book)">Supprimer</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updateProduit',book.idBook]">Modifier</a></td>
+</tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

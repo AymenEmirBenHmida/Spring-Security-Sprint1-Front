@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card shadow mb-12">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th>  <th>Date Naissance</th> </tr>
+    <tbody *ngFor="let author of authors">
+    <tr >
+    <td>{{author.idAuthor}}</td>
+    <td>{{author.nomAuthor}}</td>
+    
+    <td>{{author.dateNaissance | date:'dd/MM/yyyy'}}</td>
+    
+    <td><a class="btn btn-danger" (click)="supprimerAuthor(author)">Supprimer</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updateAuthor',author.idAuthor]">Modifier</a></td>
+</tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
