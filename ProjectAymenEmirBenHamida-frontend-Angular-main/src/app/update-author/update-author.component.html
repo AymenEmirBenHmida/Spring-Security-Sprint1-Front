@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Author :</h2>
+    </div>
+    <form >
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Author</label>
+    <input readonly type="text" [(ngModel)]="currentAuthor.idAuthor"
+    name="idAuthor" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Author</label>
+    <input type="text"[(ngModel)]= "currentAuthor.nomAuthor"
+    name="nomAuthor" class="form-control">
+    </div>
+    
+    
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+        <input type="date" [ngModel]="currentAuthor.dateNaissance
+        | date: 'yyyy-MM-dd'" (ngModelChange)=" currentAuthor.dateNaissance= $event" name="dateNaissance" class="form-control">
+        
+        
+        </div>
+    <div class="mt-2">
+    <button type="submit" (click)="updateAuthor()" class="btn btn-success">Modifer</button>
+    </div>
+    </form>
+    </div>
+    

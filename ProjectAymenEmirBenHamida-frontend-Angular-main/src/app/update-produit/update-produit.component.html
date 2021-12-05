@@ -1,0 +1,47 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Book :</h2>
+    </div>
+    <form >
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Book</label>
+    <input readonly type="text" [(ngModel)]="currentBook.idBook"
+    name="idBook" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Book</label>
+    <input type="text"[(ngModel)]= "currentBook.nomBook"
+    name="nomBook" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix Book</label>
+    <input type="number" [(ngModel)]= "currentBook.prixBook"
+    name="prixBook" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date création</label>
+    <input type="date" [ngModel]="currentBook.datePublication
+    | date: 'yyyy-MM-dd'" (ngModelChange)=" currentBook.datePublication= $event" name="datePublication" class="form-control">
+    
+    
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Desc Book</label>
+    <input type="text"[(ngModel)]= "currentBook.descriptionBook"
+    name="descriptionBook" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+
+        <label >Author</label>
+        <select  [(ngModel)]="currentBook.author" name="author" class="form-control"  >
+
+            <option *ngFor="let author of authors"  [ngValue]="author">{{author.nomAuthor}}</option>
+
+        </select>
+        </div>
+    <div class="mt-2">
+    <button type="submit" (click)="updateProduit()" class="btn btn-success">Modifer</button>
+    </div>
+    </form>
+    </div>
+    
